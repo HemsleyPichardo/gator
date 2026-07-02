@@ -52,7 +52,6 @@ func (c *Config) SetUser(userName string) error {
 	}
 
 	return nil
-
 }
 
 func getConfigFilePath() (string, error) {
