@@ -33,12 +33,16 @@ func main() {
 	cmds.register("register", handlerRegister)
 	cmds.register("reset", handlerReset)
 	cmds.register("users", handlerUsers)
+	cmds.register("agg", handlerAggregate)
+	cmds.register("addfeed", handlerAddFeed)
+	cmds.register("feeds", handlerListFeeds)
 
 	args := os.Args
 	if len(args) < 2 {
 		fmt.Println("We require a command name")
 		os.Exit(1)
 	}
+
 	err = cmds.run(programState, command{name: args[1], args: args[2:]})
 	if err != nil {
 		fmt.Println(err)
